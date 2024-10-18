@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // const App = () => {
 //   let user = "Maha"
@@ -16,17 +16,45 @@ import React from 'react'
 //   )
 // }
 
+// Form Handling 
+// const App = () => {
+//   const formHandler = (e) => {
+//     e.preventDefault()
+//     console.log("Submitted")
+//   }
+//   return (
+//     <div>
+//       <form onSubmit={(e)=>{
+//         formHandler(e)
+//       }}>
+//         <input type="text" placeholder='Enetr your name' />
+//         <button>Submit</button>
+//       </form>
+//     </div>
+//   )
+// }
+
+// TWO WAY BINDING 
+
 const App = () => {
+  const [username, setUsername] = useState("")
   const formHandler = (e) => {
     e.preventDefault()
-    console.log("Submitted")
+    console.log(username, "Submitted")
+    setUsername('')
   }
   return (
     <div>
       <form onSubmit={(e)=>{
         formHandler(e)
       }}>
-        <input type="text" placeholder='Enetr your name' />
+        <input 
+        value={username}
+        onChange={(e) =>{
+          setUsername(e.target.value)
+        }}
+        type="text" 
+        placeholder='Enetr your name' />
         <button>Submit</button>
       </form>
     </div>
