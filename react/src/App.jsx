@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+
 
 // const App = () => {
 //   let user = "Maha"
@@ -36,28 +39,39 @@ import React, { useState } from 'react'
 
 // TWO WAY BINDING 
 
+// const App = () => {
+//   const [username, setUsername] = useState("")
+//   const formHandler = (e) => {
+//     e.preventDefault()
+//     console.log(username, "Submitted")
+//     setUsername('')
+//   }
+//   return (
+//     <div>
+//       <form onSubmit={(e)=>{
+//         formHandler(e)
+//       }}>
+//         <input 
+//         value={username}
+//         onChange={(e) =>{
+//           setUsername(e.target.value)
+//         }}
+//         type="text" 
+//         placeholder='Enetr your name' />
+//         <button>Submit</button>
+//       </form>
+//     </div>
+//   )
+// }
+
+// COMPONENTS 
+
 const App = () => {
-  const [username, setUsername] = useState("")
-  const formHandler = (e) => {
-    e.preventDefault()
-    console.log(username, "Submitted")
-    setUsername('')
-  }
   return (
-    <div>
-      <form onSubmit={(e)=>{
-        formHandler(e)
-      }}>
-        <input 
-        value={username}
-        onChange={(e) =>{
-          setUsername(e.target.value)
-        }}
-        type="text" 
-        placeholder='Enetr your name' />
-        <button>Submit</button>
-      </form>
-    </div>
+    <>
+    <Navbar />
+    <Footer/>
+    </>
   )
 }
 
