@@ -175,17 +175,25 @@ import Header from "./components/Header"
 
 // React Router DOM 
 
+// const App = () => {
+//   return (
+//    <div>
+//     <Header/>
+//     <Routes>
+//       <Route path="/" element={<Home/>}/>
+//       <Route path="/home" element={<Home/>}/>
+//       <Route path="/about" element={<About/>}/>
+//       <Route path="/contact" element={<Contact/>}/>
+//       <Route path="/product" element={<Product/>}/>
+//     </Routes>
+//    </div>
+//   )
+// }
+
 const App = () => {
   return (
    <div>
-    <Header/>
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/home" element={<Home/>}/>
-      <Route path="/about" element={<About/>}/>
-      <Route path="/contact" element={<Contact/>}/>
-      <Route path="/product" element={<Product/>}/>
-    </Routes>
+    <h1>This is APP.jsx</h1>
    </div>
   )
 }
