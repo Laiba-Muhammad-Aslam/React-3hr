@@ -4,6 +4,14 @@ import Footer from './components/Footer'
 import Card from './components/Card'
 import Ex1 from './components/Ex1'
 import axios from "axios"
+import About from './Pages/About'
+import Home from './Pages/Home'
+import Contact from './Pages/Contact'
+import Product from './Pages/Product'
+import { createRoot } from 'react-dom/client'
+import { Route, Routes } from 'react-router-dom';
+import Header from "./components/Header"
+
 
 
 // const App = () => {
@@ -141,26 +149,43 @@ import axios from "axios"
 //   )
 // }
 
-const App = () => {
+// const App = () => {
 
-  const [data, setData] = useState([])
-  const getData = async () =>{
-    const response = await axios.get("https://picsum.photos/v2/list")
-    setData(response.data)
-    console.log(data)
-  }
+//   const [data, setData] = useState([])
+//   const getData = async () =>{
+//     const response = await axios.get("https://picsum.photos/v2/list")
+//     setData(response.data)
+//     console.log(data)
+//   }
   
+//   return (
+//    <div className='p-10'>
+//     <button onClick={getData} className='bg-emerald-700 text-white px-6 py-4 rounded'>Get Data</button>
+//     <div className='bg-gray-600 p-5 mt-1 text-white'>
+//      {data.map(function(elem, idx){
+//       return <div key={idx} className='flex bg-green-50 text-black justify-between text-center px-6 py-7 w-full rounded mb-3'>
+//         <img className='h-30 w-20' src={elem.download_url} alt="" />
+//         <h1>{elem.author}</h1>
+//       </div>
+//      })}
+//     </div>
+//    </div>
+//   )
+// }
+
+// React Router DOM 
+
+const App = () => {
   return (
-   <div className='p-10'>
-    <button onClick={getData} className='bg-emerald-700 text-white px-6 py-4 rounded'>Get Data</button>
-    <div className='bg-gray-600 p-5 mt-1 text-white'>
-     {data.map(function(elem, idx){
-      return <div key={idx} className='flex bg-green-50 text-black justify-between text-center px-6 py-7 w-full rounded mb-3'>
-        <img className='h-30 w-20' src={elem.download_url} alt="" />
-        <h1>{elem.author}</h1>
-      </div>
-     })}
-    </div>
+   <div>
+    <Header/>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/home" element={<Home/>}/>
+      <Route path="/about" element={<About/>}/>
+      <Route path="/contact" element={<Contact/>}/>
+      <Route path="/product" element={<Product/>}/>
+    </Routes>
    </div>
   )
 }
